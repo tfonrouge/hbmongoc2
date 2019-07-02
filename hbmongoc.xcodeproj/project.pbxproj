@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB2643D51F5A50EB007C6D1A /* hb_mongoc_client.c in Sources */ = {isa = PBXBuildFile; fileRef = AB2643D31F5A50EB007C6D1A /* hb_mongoc_client.c */; };
+		AB2643D61F5A50EB007C6D1A /* hb_mongoc_client.h in Headers */ = {isa = PBXBuildFile; fileRef = AB2643D41F5A50EB007C6D1A /* hb_mongoc_client.h */; };
+		AB2643D91F5A5657007C6D1A /* hb_mongoc_uri.c in Sources */ = {isa = PBXBuildFile; fileRef = AB2643D71F5A5657007C6D1A /* hb_mongoc_uri.c */; };
+		AB2643DA1F5A5657007C6D1A /* hb_mongoc_uri.h in Headers */ = {isa = PBXBuildFile; fileRef = AB2643D81F5A5657007C6D1A /* hb_mongoc_uri.h */; };
+		AB2643DD1F5A6A1F007C6D1A /* hb_mongoc_collection.c in Sources */ = {isa = PBXBuildFile; fileRef = AB2643DB1F5A6A1F007C6D1A /* hb_mongoc_collection.c */; };
+		AB2643DE1F5A6A1F007C6D1A /* hb_mongoc_collection.h in Headers */ = {isa = PBXBuildFile; fileRef = AB2643DC1F5A6A1F007C6D1A /* hb_mongoc_collection.h */; };
+		AB2643E11F5A6AE7007C6D1A /* hb_mongoc_database.c in Sources */ = {isa = PBXBuildFile; fileRef = AB2643DF1F5A6AE7007C6D1A /* hb_mongoc_database.c */; };
+		AB2643E21F5A6AE7007C6D1A /* hb_mongoc_database.h in Headers */ = {isa = PBXBuildFile; fileRef = AB2643E01F5A6AE7007C6D1A /* hb_mongoc_database.h */; };
+		AB3E276D1F5F8C2D00C2DE06 /* hb_mongo_cursor.c in Sources */ = {isa = PBXBuildFile; fileRef = AB3E276B1F5F8C2D00C2DE06 /* hb_mongo_cursor.c */; };
+		AB3E276E1F5F8C2D00C2DE06 /* hb_mongo_cursor.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3E276C1F5F8C2D00C2DE06 /* hb_mongo_cursor.h */; };
+		AB3E27751F61B46D00C2DE06 /* hb_mongoc_write_concern.c in Sources */ = {isa = PBXBuildFile; fileRef = AB3E27731F61B46D00C2DE06 /* hb_mongoc_write_concern.c */; };
+		AB3E27761F61B46D00C2DE06 /* hb_mongoc_write_concern.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3E27741F61B46D00C2DE06 /* hb_mongoc_write_concern.h */; };
+		AB3E27791F61C79600C2DE06 /* hb_mongoc_read_prefs.c in Sources */ = {isa = PBXBuildFile; fileRef = AB3E27771F61C79600C2DE06 /* hb_mongoc_read_prefs.c */; };
+		AB3E277A1F61C79600C2DE06 /* hb_mongoc_read_prefs.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3E27781F61C79600C2DE06 /* hb_mongoc_read_prefs.h */; };
+		AB3E277E1F624AB100C2DE06 /* hb_mongoc_bulk_operation.c in Sources */ = {isa = PBXBuildFile; fileRef = AB3E277C1F624AB100C2DE06 /* hb_mongoc_bulk_operation.c */; };
+		AB3E277F1F624AB100C2DE06 /* hb_mongoc_bulk_operation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3E277D1F624AB100C2DE06 /* hb_mongoc_bulk_operation.h */; };
+		AB5C2FD51F6E009C0034F1DB /* hb_bson_append.c in Sources */ = {isa = PBXBuildFile; fileRef = AB5C2FD31F6E009C0034F1DB /* hb_bson_append.c */; };
+		AB5C2FD61F6E009C0034F1DB /* hb_bson_append.h in Headers */ = {isa = PBXBuildFile; fileRef = AB5C2FD41F6E009C0034F1DB /* hb_bson_append.h */; };
+		AB5C2FD91F6E02730034F1DB /* hb_bson_oid.c in Sources */ = {isa = PBXBuildFile; fileRef = AB5C2FD71F6E02730034F1DB /* hb_bson_oid.c */; };
+		AB5C2FDA1F6E02730034F1DB /* hb_bson_oid.h in Headers */ = {isa = PBXBuildFile; fileRef = AB5C2FD81F6E02730034F1DB /* hb_bson_oid.h */; };
+		AB5C2FDD1F6E04010034F1DB /* hb_bson_context.c in Sources */ = {isa = PBXBuildFile; fileRef = AB5C2FDB1F6E04010034F1DB /* hb_bson_context.c */; };
+		AB5C2FDE1F6E04010034F1DB /* hb_bson_context.h in Headers */ = {isa = PBXBuildFile; fileRef = AB5C2FDC1F6E04010034F1DB /* hb_bson_context.h */; };
+		AB5C2FE81F6E41460034F1DB /* hb_bson_iter.c in Sources */ = {isa = PBXBuildFile; fileRef = AB5C2FE61F6E41460034F1DB /* hb_bson_iter.c */; };
+		AB5C2FE91F6E41460034F1DB /* hb_bson_iter.h in Headers */ = {isa = PBXBuildFile; fileRef = AB5C2FE71F6E41460034F1DB /* hb_bson_iter.h */; };
+		ABFAD5DF1F546FF30001BA86 /* hb_bson.c in Sources */ = {isa = PBXBuildFile; fileRef = ABFAD5DB1F546FF30001BA86 /* hb_bson.c */; };
+		ABFAD5E01F546FF30001BA86 /* hb_bson.h in Headers */ = {isa = PBXBuildFile; fileRef = ABFAD5DC1F546FF30001BA86 /* hb_bson.h */; };
+		ABFAD5E11F546FF30001BA86 /* hb_mongoc.c in Sources */ = {isa = PBXBuildFile; fileRef = ABFAD5DD1F546FF30001BA86 /* hb_mongoc.c */; };
+		ABFAD5E21F546FF30001BA86 /* hb_mongoc.h in Headers */ = {isa = PBXBuildFile; fileRef = ABFAD5DE1F546FF30001BA86 /* hb_mongoc.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AB2643D21F5A4E9F007C6D1A /* test_03.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test_03.prg; path = ../../git/hbmongoc/tests/test_03.prg; sourceTree = "<group>"; };
+		AB2643D31F5A50EB007C6D1A /* hb_mongoc_client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_mongoc_client.c; path = ../../git/hbmongoc/src/hb_mongoc_client.c; sourceTree = "<group>"; };
+		AB2643D41F5A50EB007C6D1A /* hb_mongoc_client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_mongoc_client.h; path = ../../git/hbmongoc/src/hb_mongoc_client.h; sourceTree = "<group>"; };
+		AB2643D71F5A5657007C6D1A /* hb_mongoc_uri.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_mongoc_uri.c; path = ../../git/hbmongoc/src/hb_mongoc_uri.c; sourceTree = "<group>"; };
+		AB2643D81F5A5657007C6D1A /* hb_mongoc_uri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_mongoc_uri.h; path = ../../git/hbmongoc/src/hb_mongoc_uri.h; sourceTree = "<group>"; };
+		AB2643DB1F5A6A1F007C6D1A /* hb_mongoc_collection.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_mongoc_collection.c; path = ../../git/hbmongoc/src/hb_mongoc_collection.c; sourceTree = "<group>"; };
+		AB2643DC1F5A6A1F007C6D1A /* hb_mongoc_collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_mongoc_collection.h; path = ../../git/hbmongoc/src/hb_mongoc_collection.h; sourceTree = "<group>"; };
+		AB2643DF1F5A6AE7007C6D1A /* hb_mongoc_database.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_mongoc_database.c; path = ../../git/hbmongoc/src/hb_mongoc_database.c; sourceTree = "<group>"; };
+		AB2643E01F5A6AE7007C6D1A /* hb_mongoc_database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_mongoc_database.h; path = ../../git/hbmongoc/src/hb_mongoc_database.h; sourceTree = "<group>"; };
+		AB2643E31F5A9020007C6D1A /* bson_test_01.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bson_test_01.prg; path = ../../git/hbmongoc/tests/bson_test_01.prg; sourceTree = "<group>"; };
+		AB2643E41F5B3325007C6D1A /* insert_docs.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = insert_docs.prg; path = ../../git/hbmongoc/tests/insert_docs.prg; sourceTree = "<group>"; };
+		AB3E27681F5CB5ED00C2DE06 /* client_command_01.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = client_command_01.prg; path = ../../git/hbmongoc/tests/client_command_01.prg; sourceTree = "<group>"; };
+		AB3E27691F5F73D800C2DE06 /* collection_find_01.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = collection_find_01.prg; path = ../../git/hbmongoc/tests/collection_find_01.prg; sourceTree = "<group>"; };
+		AB3E276B1F5F8C2D00C2DE06 /* hb_mongo_cursor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_mongo_cursor.c; path = ../../git/hbmongoc/src/hb_mongo_cursor.c; sourceTree = "<group>"; };
+		AB3E276C1F5F8C2D00C2DE06 /* hb_mongo_cursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_mongo_cursor.h; path = ../../git/hbmongoc/src/hb_mongo_cursor.h; sourceTree = "<group>"; };
+		AB3E27711F61752300C2DE06 /* bson_test_02.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bson_test_02.prg; path = ../../git/hbmongoc/tests/bson_test_02.prg; sourceTree = "<group>"; };
+		AB3E27721F61830600C2DE06 /* import_docs_from_dbf.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = import_docs_from_dbf.prg; path = ../../git/hbmongoc/tests/import_docs_from_dbf.prg; sourceTree = "<group>"; };
+		AB3E27731F61B46D00C2DE06 /* hb_mongoc_write_concern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_mongoc_write_concern.c; path = ../../git/hbmongoc/src/hb_mongoc_write_concern.c; sourceTree = "<group>"; };
+		AB3E27741F61B46D00C2DE06 /* hb_mongoc_write_concern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_mongoc_write_concern.h; path = ../../git/hbmongoc/src/hb_mongoc_write_concern.h; sourceTree = "<group>"; };
+		AB3E27771F61C79600C2DE06 /* hb_mongoc_read_prefs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_mongoc_read_prefs.c; path = ../../git/hbmongoc/src/hb_mongoc_read_prefs.c; sourceTree = "<group>"; };
+		AB3E27781F61C79600C2DE06 /* hb_mongoc_read_prefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_mongoc_read_prefs.h; path = ../../git/hbmongoc/src/hb_mongoc_read_prefs.h; sourceTree = "<group>"; };
+		AB3E277B1F61E79A00C2DE06 /* test_00.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test_00.prg; path = ../../git/hbmongoc/tests/test_00.prg; sourceTree = "<group>"; };
+		AB3E277C1F624AB100C2DE06 /* hb_mongoc_bulk_operation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_mongoc_bulk_operation.c; path = ../../git/hbmongoc/src/hb_mongoc_bulk_operation.c; sourceTree = "<group>"; };
+		AB3E277D1F624AB100C2DE06 /* hb_mongoc_bulk_operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_mongoc_bulk_operation.h; path = ../../git/hbmongoc/src/hb_mongoc_bulk_operation.h; sourceTree = "<group>"; };
+		AB3E27801F6253FA00C2DE06 /* bulk_operation_01.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bulk_operation_01.prg; path = ../../git/hbmongoc/tests/bulk_operation_01.prg; sourceTree = "<group>"; };
+		AB3E27821F64730C00C2DE06 /* hb_hbmongoc.prg */ = {isa = PBXFileReference; explicitFileType = sourcecode.c; fileEncoding = 4; name = hb_hbmongoc.prg; path = ../../git/hbmongoc/src/hb_hbmongoc.prg; sourceTree = "<group>"; };
+		AB5C2FD31F6E009C0034F1DB /* hb_bson_append.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_bson_append.c; path = ../../git/hbmongoc/src/hb_bson_append.c; sourceTree = "<group>"; };
+		AB5C2FD41F6E009C0034F1DB /* hb_bson_append.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_bson_append.h; path = ../../git/hbmongoc/src/hb_bson_append.h; sourceTree = "<group>"; };
+		AB5C2FD71F6E02730034F1DB /* hb_bson_oid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_bson_oid.c; path = ../../git/hbmongoc/src/hb_bson_oid.c; sourceTree = "<group>"; };
+		AB5C2FD81F6E02730034F1DB /* hb_bson_oid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_bson_oid.h; path = ../../git/hbmongoc/src/hb_bson_oid.h; sourceTree = "<group>"; };
+		AB5C2FDB1F6E04010034F1DB /* hb_bson_context.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_bson_context.c; path = ../../git/hbmongoc/src/hb_bson_context.c; sourceTree = "<group>"; };
+		AB5C2FDC1F6E04010034F1DB /* hb_bson_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_bson_context.h; path = ../../git/hbmongoc/src/hb_bson_context.h; sourceTree = "<group>"; };
+		AB5C2FDF1F6E0B400034F1DB /* bson_oid_01.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bson_oid_01.prg; path = ../../git/hbmongoc/tests/bson_oid_01.prg; sourceTree = "<group>"; };
+		AB5C2FE61F6E41460034F1DB /* hb_bson_iter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_bson_iter.c; path = ../../git/hbmongoc/src/hb_bson_iter.c; sourceTree = "<group>"; };
+		AB5C2FE71F6E41460034F1DB /* hb_bson_iter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_bson_iter.h; path = ../../git/hbmongoc/src/hb_bson_iter.h; sourceTree = "<group>"; };
+		AB5C2FEA1F6EC5E20034F1DB /* bson_iter_01.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bson_iter_01.prg; path = ../../git/hbmongoc/tests/bson_iter_01.prg; sourceTree = "<group>"; };
+		AB5C2FEB1F6ED8900034F1DB /* bson_iter_array_00.prg */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = bson_iter_array_00.prg; path = ../../git/hbmongoc/tests/bson_iter_array_00.prg; sourceTree = "<group>"; };
+		AB5C2FEC1F6EFB520034F1DB /* bson_iter_binary_00.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bson_iter_binary_00.prg; path = ../../git/hbmongoc/tests/bson_iter_binary_00.prg; sourceTree = "<group>"; };
+		AB7E9A0B1F55EEDD0073450C /* bios.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bios.json; path = ../../git/hbmongoc/tests/bios.json; sourceTree = "<group>"; };
+		ABAE66EB1F780D060088DF50 /* examples */ = {isa = PBXFileReference; lastKnownFileType = folder; name = examples; path = ../../git/hbmongoc/examples; sourceTree = "<group>"; };
+		ABFAD5D31F546F910001BA86 /* libhbmongoc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libhbmongoc.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABFAD5DB1F546FF30001BA86 /* hb_bson.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_bson.c; path = ../../git/hbmongoc/src/hb_bson.c; sourceTree = "<group>"; };
+		ABFAD5DC1F546FF30001BA86 /* hb_bson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_bson.h; path = ../../git/hbmongoc/src/hb_bson.h; sourceTree = "<group>"; };
+		ABFAD5DD1F546FF30001BA86 /* hb_mongoc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hb_mongoc.c; path = ../../git/hbmongoc/src/hb_mongoc.c; sourceTree = "<group>"; };
+		ABFAD5DE1F546FF30001BA86 /* hb_mongoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hb_mongoc.h; path = ../../git/hbmongoc/src/hb_mongoc.h; sourceTree = "<group>"; };
+		ABFAD5E41F5470F60001BA86 /* hbmongoc.ch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hbmongoc.ch; path = ../../git/hbmongoc/hbmongoc.ch; sourceTree = "<group>"; };
+		ABFAD5E51F5470F60001BA86 /* hbmongoc.hbc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hbmongoc.hbc; path = ../../git/hbmongoc/hbmongoc.hbc; sourceTree = "<group>"; };
+		ABFAD5E61F5470F60001BA86 /* hbmongoc.hbp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hbmongoc.hbp; path = ../../git/hbmongoc/hbmongoc.hbp; sourceTree = "<group>"; };
+		ABFAD5E71F5470F60001BA86 /* hbmongoc.hbx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hbmongoc.hbx; path = ../../git/hbmongoc/hbmongoc.hbx; sourceTree = "<group>"; };
+		ABFAD5E81F5470F60001BA86 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../git/hbmongoc/README.md; sourceTree = "<group>"; };
+		ABFAD5EB1F5471350001BA86 /* hbmk.hbm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hbmk.hbm; path = ../../git/hbmongoc/tests/hbmk.hbm; sourceTree = "<group>"; };
+		ABFAD5EC1F5471350001BA86 /* test_01.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test_01.prg; path = ../../git/hbmongoc/tests/test_01.prg; sourceTree = "<group>"; };
+		ABFAD5ED1F5471350001BA86 /* test_02.prg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test_02.prg; path = ../../git/hbmongoc/tests/test_02.prg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABFAD5D01F546F910001BA86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABFAD5CA1F546F910001BA86 = {
+			isa = PBXGroup;
+			children = (
+				ABAE66EB1F780D060088DF50 /* examples */,
+				ABFAD5E31F5470D80001BA86 /* hbmongoc */,
+				ABFAD5DA1F546F960001BA86 /* src */,
+				ABFAD5EA1F5471200001BA86 /* tests */,
+				ABFAD5D41F546F910001BA86 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ABFAD5D41F546F910001BA86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABFAD5D31F546F910001BA86 /* libhbmongoc.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABFAD5DA1F546F960001BA86 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				AB5C2FD31F6E009C0034F1DB /* hb_bson_append.c */,
+				AB5C2FD41F6E009C0034F1DB /* hb_bson_append.h */,
+				AB5C2FDB1F6E04010034F1DB /* hb_bson_context.c */,
+				AB5C2FDC1F6E04010034F1DB /* hb_bson_context.h */,
+				AB5C2FE61F6E41460034F1DB /* hb_bson_iter.c */,
+				AB5C2FE71F6E41460034F1DB /* hb_bson_iter.h */,
+				AB5C2FD71F6E02730034F1DB /* hb_bson_oid.c */,
+				AB5C2FD81F6E02730034F1DB /* hb_bson_oid.h */,
+				ABFAD5DB1F546FF30001BA86 /* hb_bson.c */,
+				ABFAD5DC1F546FF30001BA86 /* hb_bson.h */,
+				AB3E27821F64730C00C2DE06 /* hb_hbmongoc.prg */,
+				AB3E276B1F5F8C2D00C2DE06 /* hb_mongo_cursor.c */,
+				AB3E276C1F5F8C2D00C2DE06 /* hb_mongo_cursor.h */,
+				AB3E277C1F624AB100C2DE06 /* hb_mongoc_bulk_operation.c */,
+				AB3E277D1F624AB100C2DE06 /* hb_mongoc_bulk_operation.h */,
+				AB2643D31F5A50EB007C6D1A /* hb_mongoc_client.c */,
+				AB2643D41F5A50EB007C6D1A /* hb_mongoc_client.h */,
+				AB2643DB1F5A6A1F007C6D1A /* hb_mongoc_collection.c */,
+				AB2643DC1F5A6A1F007C6D1A /* hb_mongoc_collection.h */,
+				AB2643DF1F5A6AE7007C6D1A /* hb_mongoc_database.c */,
+				AB2643E01F5A6AE7007C6D1A /* hb_mongoc_database.h */,
+				AB3E27771F61C79600C2DE06 /* hb_mongoc_read_prefs.c */,
+				AB3E27781F61C79600C2DE06 /* hb_mongoc_read_prefs.h */,
+				AB2643D71F5A5657007C6D1A /* hb_mongoc_uri.c */,
+				AB2643D81F5A5657007C6D1A /* hb_mongoc_uri.h */,
+				AB3E27731F61B46D00C2DE06 /* hb_mongoc_write_concern.c */,
+				AB3E27741F61B46D00C2DE06 /* hb_mongoc_write_concern.h */,
+				ABFAD5DD1F546FF30001BA86 /* hb_mongoc.c */,
+				ABFAD5DE1F546FF30001BA86 /* hb_mongoc.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		ABFAD5E31F5470D80001BA86 /* hbmongoc */ = {
+			isa = PBXGroup;
+			children = (
+				ABFAD5E41F5470F60001BA86 /* hbmongoc.ch */,
+				ABFAD5E51F5470F60001BA86 /* hbmongoc.hbc */,
+				ABFAD5E61F5470F60001BA86 /* hbmongoc.hbp */,
+				ABFAD5E71F5470F60001BA86 /* hbmongoc.hbx */,
+				ABFAD5E81F5470F60001BA86 /* README.md */,
+			);
+			name = hbmongoc;
+			sourceTree = "<group>";
+		};
+		ABFAD5EA1F5471200001BA86 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				ABFAD5EB1F5471350001BA86 /* hbmk.hbm */,
+				AB7E9A0B1F55EEDD0073450C /* bios.json */,
+				AB5C2FEA1F6EC5E20034F1DB /* bson_iter_01.prg */,
+				AB5C2FEB1F6ED8900034F1DB /* bson_iter_array_00.prg */,
+				AB5C2FEC1F6EFB520034F1DB /* bson_iter_binary_00.prg */,
+				AB5C2FDF1F6E0B400034F1DB /* bson_oid_01.prg */,
+				AB2643E31F5A9020007C6D1A /* bson_test_01.prg */,
+				AB3E27711F61752300C2DE06 /* bson_test_02.prg */,
+				AB3E27801F6253FA00C2DE06 /* bulk_operation_01.prg */,
+				AB3E27681F5CB5ED00C2DE06 /* client_command_01.prg */,
+				AB3E27691F5F73D800C2DE06 /* collection_find_01.prg */,
+				AB3E27721F61830600C2DE06 /* import_docs_from_dbf.prg */,
+				AB2643E41F5B3325007C6D1A /* insert_docs.prg */,
+				AB3E277B1F61E79A00C2DE06 /* test_00.prg */,
+				ABFAD5EC1F5471350001BA86 /* test_01.prg */,
+				ABFAD5ED1F5471350001BA86 /* test_02.prg */,
+				AB2643D21F5A4E9F007C6D1A /* test_03.prg */,
+			);
+			name = tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		ABFAD5D11F546F910001BA86 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB5C2FE91F6E41460034F1DB /* hb_bson_iter.h in Headers */,
+				AB2643DA1F5A5657007C6D1A /* hb_mongoc_uri.h in Headers */,
+				AB3E277A1F61C79600C2DE06 /* hb_mongoc_read_prefs.h in Headers */,
+				ABFAD5E01F546FF30001BA86 /* hb_bson.h in Headers */,
+				AB2643D61F5A50EB007C6D1A /* hb_mongoc_client.h in Headers */,
+				ABFAD5E21F546FF30001BA86 /* hb_mongoc.h in Headers */,
+				AB5C2FDA1F6E02730034F1DB /* hb_bson_oid.h in Headers */,
+				AB3E277F1F624AB100C2DE06 /* hb_mongoc_bulk_operation.h in Headers */,
+				AB3E27761F61B46D00C2DE06 /* hb_mongoc_write_concern.h in Headers */,
+				AB5C2FD61F6E009C0034F1DB /* hb_bson_append.h in Headers */,
+				AB5C2FDE1F6E04010034F1DB /* hb_bson_context.h in Headers */,
+				AB2643E21F5A6AE7007C6D1A /* hb_mongoc_database.h in Headers */,
+				AB3E276E1F5F8C2D00C2DE06 /* hb_mongo_cursor.h in Headers */,
+				AB2643DE1F5A6A1F007C6D1A /* hb_mongoc_collection.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		ABFAD5D21F546F910001BA86 /* hbmongoc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABFAD5D71F546F910001BA86 /* Build configuration list for PBXNativeTarget "hbmongoc" */;
+			buildPhases = (
+				ABFAD5CF1F546F910001BA86 /* Sources */,
+				ABFAD5D01F546F910001BA86 /* Frameworks */,
+				ABFAD5D11F546F910001BA86 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hbmongoc;
+			productName = hbmongoc;
+			productReference = ABFAD5D31F546F910001BA86 /* libhbmongoc.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABFAD5CB1F546F910001BA86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Teo Fonrouge";
+				TargetAttributes = {
+					ABFAD5D21F546F910001BA86 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = ABFAD5CE1F546F910001BA86 /* Build configuration list for PBXProject "hbmongoc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABFAD5CA1F546F910001BA86;
+			productRefGroup = ABFAD5D41F546F910001BA86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABFAD5D21F546F910001BA86 /* hbmongoc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABFAD5CF1F546F910001BA86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB5C2FDD1F6E04010034F1DB /* hb_bson_context.c in Sources */,
+				AB3E277E1F624AB100C2DE06 /* hb_mongoc_bulk_operation.c in Sources */,
+				AB5C2FD51F6E009C0034F1DB /* hb_bson_append.c in Sources */,
+				AB5C2FE81F6E41460034F1DB /* hb_bson_iter.c in Sources */,
+				AB2643D51F5A50EB007C6D1A /* hb_mongoc_client.c in Sources */,
+				AB3E276D1F5F8C2D00C2DE06 /* hb_mongo_cursor.c in Sources */,
+				ABFAD5E11F546FF30001BA86 /* hb_mongoc.c in Sources */,
+				ABFAD5DF1F546FF30001BA86 /* hb_bson.c in Sources */,
+				AB2643E11F5A6AE7007C6D1A /* hb_mongoc_database.c in Sources */,
+				AB2643D91F5A5657007C6D1A /* hb_mongoc_uri.c in Sources */,
+				AB5C2FD91F6E02730034F1DB /* hb_bson_oid.c in Sources */,
+				AB3E27791F61C79600C2DE06 /* hb_mongoc_read_prefs.c in Sources */,
+				AB2643DD1F5A6A1F007C6D1A /* hb_mongoc_collection.c in Sources */,
+				AB3E27751F61B46D00C2DE06 /* hb_mongoc_write_concern.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		ABFAD5D51F546F910001BA86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		ABFAD5D61F546F910001BA86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		ABFAD5D81F546F910001BA86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"/Users/teo/git/harbour/include/**",
+					"/usr/local/include/libmongoc-1.0/**",
+					"/usr/local/include/libbson-1.0/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/Users/teo/git/harbour/lib/darwin/clang,
+					/usr/local/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ABFAD5D91F546F910001BA86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"/Users/teo/git/harbour/include/**",
+					"/usr/local/include/libmongoc-1.0/**",
+					"/usr/local/include/libbson-1.0/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/Users/teo/git/harbour/lib/darwin/clang,
+					/usr/local/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABFAD5CE1F546F910001BA86 /* Build configuration list for PBXProject "hbmongoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABFAD5D51F546F910001BA86 /* Debug */,
+				ABFAD5D61F546F910001BA86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABFAD5D71F546F910001BA86 /* Build configuration list for PBXNativeTarget "hbmongoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABFAD5D81F546F910001BA86 /* Debug */,
+				ABFAD5D91F546F910001BA86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABFAD5CB1F546F910001BA86 /* Project object */;
+}

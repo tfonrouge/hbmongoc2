@@ -178,6 +178,50 @@ HB_FUNC( MONGOC_COLLECTION_FIND )
 }
 #endif
 
+HB_FUNC(MONGOC_COLLECTION_FIND_AND_MODIFY) {
+
+    mongoc_collection_t * collection = mongoc_hbparam( 1, _hbmongoc_collection_t_ );
+    bson_t * query = bson_hbparam( 2, HB_IT_ANY );
+
+    if (collection && query) {
+        
+        bson_t * sort = bson_hbparam( 3, HB_IT_ANY );
+        bson_t * update = bson_hbparam( 4, HB_IT_ANY );
+        bson_t * fields = bson_hbparam( 5, HB_IT_ANY );
+        
+        bool _remove = hb_parl(6);
+        bool upsert = hb_parl(7);
+        bool _new = hb_parl(8);
+        bson_t reply;
+        bson_error_t error;
+        
+        bool result = mongoc_collection_find_and_modify(collection, query, sort, update, fields, _remove, upsert, _new, &reply, &error);
+        
+        if ( sort && ! HB_ISPOINTER( 3 ) ) {
+            bson_destroy( sort );
+        }
+        if ( update && ! HB_ISPOINTER( 4 ) ) {
+            bson_destroy( update );
+        }
+        if ( fields && ! HB_ISPOINTER( 5 ) ) {
+            bson_destroy( fields );
+        }
+
+        hbmongoc_return_byref_bson( 9, bson_copy(&reply) );
+        bson_destroy(&reply);
+        bson_hbstor_byref_error( 10, &error, result );
+        
+        hb_retl(result);
+        
+    } else {
+        HBMONGOC_ERR_ARGS();
+    }
+    
+    if ( query && ! HB_ISPOINTER( 2 ) ) {
+        bson_destroy( query );
+    }
+}
+
 HB_FUNC( MONGOC_COLLECTION_FIND_INDEXES_WITH_OPTS )
 {
     mongoc_collection_t * collection = mongoc_hbparam( 1, _hbmongoc_collection_t_ );
