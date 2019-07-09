@@ -13,12 +13,17 @@ HB_FUNC( MONGOC_DATABASE_CREATE_COLLECTION )
 {
     mongoc_database_t * database = mongoc_hbparam( 1, _hbmongoc_database_t_ );
     const char * name = hb_parc( 2 );
-    bson_t * opts = bson_hbparam( 3, HB_IT_ANY );
 
     if ( database && name ) {
+
+        bson_t * opts = bson_hbparam( 3, HB_IT_ANY );
         bson_error_t error;
 
         mongoc_collection_t * collection = mongoc_database_create_collection( database, name, opts, &error );
+
+        if ( opts && ! HB_ISPOINTER( 3 ) ) {
+            bson_destroy( opts );
+        }
 
         bson_hbstor_byref_error( 4, &error, collection != NULL );
 
@@ -27,10 +32,6 @@ HB_FUNC( MONGOC_DATABASE_CREATE_COLLECTION )
 
     } else {
         HBMONGOC_ERR_ARGS();
-    }
-
-    if ( opts && ! HB_ISPOINTER( 3 ) ) {
-        bson_destroy( opts );
     }
 }
 
@@ -100,6 +101,23 @@ HB_FUNC( MONGOC_DATABASE_GET_COLLECTION_NAMES_WITH_OPTS )
             bson_destroy( opts );
         }
 
+    } else {
+        HBMONGOC_ERR_ARGS();
+    }
+}
+
+HB_FUNC(MONGOC_DATABASE_HAS_COLLECTION) {
+
+    mongoc_database_t * database = mongoc_hbparam( 1, _hbmongoc_database_t_ );
+    const char * name = hb_parc(2);
+    
+    if (database && name) {
+        bson_error_t error;
+        bool result = mongoc_database_has_collection(database, name, &error);
+        bson_hbstor_byref_error( 3, &error, result );
+        
+        hb_retl(result);
+        
     } else {
         HBMONGOC_ERR_ARGS();
     }
