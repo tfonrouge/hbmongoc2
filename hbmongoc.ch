@@ -37,6 +37,7 @@
 #xtranslate BSON_APPEND_DOUBLE( <document>, <key>, <value> ) => bson_append_double( <document>, <key>, -1, <value> )
 #xtranslate BSON_APPEND_INT32( <document>, <key>, <value> ) => bson_append_int32( <document>, <key>, -1, <value> )
 #xtranslate BSON_APPEND_INT64( <document>, <key>, <value> ) => bson_append_int64( <document>, <key>, -1, <value> )
+#xtranslate BSON_APPEND_OID( <document>, <key>, <oid> ) => bson_append_oid( <document>, <key>, -1, <oid> )
 #xtranslate BSON_APPEND_REGEX( <document>, <key>, <regex>, <options> ) => bson_append_regex( <document>, <key>, -1, <regex>, <options> )
 #xtranslate BSON_APPEND_UTF8( <document>, <key>, <value> ) => bson_append_utf8( <document>, <key>, -1, <value>, -1 )
 
