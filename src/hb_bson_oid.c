@@ -182,3 +182,7 @@ HB_FUNC( BSON_OID_TO_STRING )
         HBBSON_ERR_ARGS();
     }
 }
+
+HB_FUNC(HB_BSON_IS_OID) {
+    hb_retl(bson_oid_hbparam(1) != NULL);
+}
