@@ -9,6 +9,31 @@
 #include "hb_mongoc_database.h"
 #include "hb_mongoc.h"
 
+HB_FUNC(MONGOC_DATABASE_COMMAND_SIMPLE) {
+    mongoc_database_t * database = mongoc_hbparam( 1, _hbmongoc_database_t_ );
+    bson_t * command = bson_hbparam( 2, HB_IT_ANY );
+    
+    if (database) {
+        const mongoc_read_prefs_t * read_prefs = mongoc_hbparam( 3, _hbmongoc_read_prefs_t_ );
+        bson_t reply;
+        bson_error_t error;
+
+        bool result = mongoc_database_command_simple(database, command, read_prefs, &reply, &error);
+
+        hbmongoc_return_byref_bson( 4, bson_copy( &reply ) );
+        bson_destroy(&reply);
+        bson_hbstor_byref_error( 5, &error, result );
+        
+        hb_retl(result);
+
+    } else {
+        HBMONGOC_ERR_ARGS();
+    }
+    if ( command && ! HB_ISPOINTER( 2 ) ) {
+        bson_destroy( command );
+    }
+}
+
 HB_FUNC(MONGOC_DATABASE_COMMAND_WITH_OPTS) {
     mongoc_database_t * database = mongoc_hbparam( 1, _hbmongoc_database_t_ );
     bson_t * command = bson_hbparam( 2, HB_IT_ANY );
