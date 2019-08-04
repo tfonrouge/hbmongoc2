@@ -114,6 +114,10 @@ HB_FUNC( MONGOC_COLLECTION_DELETE_MANY )
     } else {
         HBMONGOC_ERR_ARGS();
     }
+
+    if ( selector && ! HB_ISPOINTER( 2 ) ) {
+        bson_destroy( selector );
+    }
 }
 
 HB_FUNC( MONGOC_COLLECTION_DELETE_ONE )
@@ -143,6 +147,10 @@ HB_FUNC( MONGOC_COLLECTION_DELETE_ONE )
         
     } else {
         HBMONGOC_ERR_ARGS();
+    }
+
+    if ( selector && ! HB_ISPOINTER( 2 ) ) {
+        bson_destroy( selector );
     }
 }
 
@@ -218,9 +226,14 @@ HB_FUNC( MONGOC_COLLECTION_FIND )
         u_int32_t batch_size = hb_parnidef( 5, 0 );
         bson_t * fields = bson_hbparam( 7, HB_IT_ANY );
         const mongoc_read_prefs_t *read_prefs = mongoc_hbparam( 8, _hbmongoc_read_prefs_t_ );
+        
         mongoc_cursor_t * cursor = mongoc_collection_find( collection, flags, skip, limit, batch_size, query, fields, read_prefs );
 
         PHB_MONGOC phCursor = hbmongoc_new_dataContainer( _hbmongoc_cursor_t_, cursor );
+
+        if ( fields && ! HB_ISPOINTER( 7 ) ) {
+            bson_destroy( fields );
+        }
 
         hb_retptrGC( phCursor );
 
@@ -441,6 +454,10 @@ HB_FUNC( MONGOC_COLLECTION_INSERT_ONE )
 
     } else {
         HBMONGOC_ERR_ARGS();
+    }
+
+    if ( document && ! HB_ISPOINTER( 2 ) ) {
+        bson_destroy( document );
     }
 }
 
