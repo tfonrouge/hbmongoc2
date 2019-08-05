@@ -87,6 +87,11 @@ FUNCTION hb_bson_append( bson, key, value )
 
 RETURN result
 
+FUNCTION hb_bson_new(key, value)
+    LOCAL bson := bson_new()
+    hb_bson_append(bson, key, value)
+RETURN bson
+
 FUNCTION hb_bson_value(bson, key, defValue, type)
     LOCAL iter
     LOCAL value
