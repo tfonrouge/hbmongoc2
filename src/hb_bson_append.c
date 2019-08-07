@@ -149,7 +149,7 @@ HB_FUNC( BSON_APPEND_DATE_TIME )
         int key_length = hb_parnidef( 3, ( int ) hb_parclen( 2 ) );
         HB_LONGLONG value;
         if ( hb_itemType( pItem ) & HB_IT_DATETIME ) {
-            value = hb_dtToUnix(hb_itemGetTD(pItem));
+            value = hb_tToUnix(hb_itemGetTD(pItem));
         } else {
             value = hb_itemGetNLL( pItem );
         }

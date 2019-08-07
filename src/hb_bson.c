@@ -222,7 +222,7 @@ char * hbbson_as_json( const bson_t * bson )
     return szJSON;
 }
 
-HB_LONGLONG hb_dtToUnix(double dTimeStamp)
+HB_LONGLONG hb_tToUnix(double dTimeStamp)
 {
     int iYear, iMonth, iDay, iHour, iMinute, iSecond, iMSec;
 
@@ -244,7 +244,7 @@ HB_LONGLONG hb_dtToUnix(double dTimeStamp)
     return timet * 1000 + iMSec;
 }
 
-HB_FUNC( HB_DTTOUNIX )
+HB_FUNC( HB_TTOUNIX )
 {
     if (hb_pcount() == 0 || HB_ISDATETIME(1)) {
         double dTimeStamp;
@@ -257,7 +257,7 @@ HB_FUNC( HB_DTTOUNIX )
             dTimeStamp = (double) lDate + (double) lTime / HB_MILLISECS_PER_DAY;
         }
 
-        hb_retnll(hb_dtToUnix(dTimeStamp));
+        hb_retnll(hb_tToUnix(dTimeStamp));
 
     } else {
         HBBSON_ERR_ARGS();
@@ -275,7 +275,7 @@ HB_FUNC( HB_UNIXTOT )
         item->asDateTime.julian is LONG, and needs to be double to correct calculation:
         t := hb_sToT("19700101000000")
         hb_tToN(t) = 2440588.00 // which is false, needs to be 2440587.50
-        hb_dtToUnix(t) = 21600000 // which is false, needs to be 0
+        hb_tToUnix(t) = 21600000 // which is false, needs to be 0
         */
         double julian = 0.0;
         HB_LONGLONG secs = hb_parnll(1) / 1000;
