@@ -24,6 +24,9 @@ FUNCTION hb_bson_append( bson, key, value )
             hb_bson_append( bson, itm:__enumKey, itm )
         NEXT
         EXIT
+    CASE "P"
+        result := bson_concat(bson, key)
+        EXIT
     OTHERWISE
         SWITCH valType( value )
         CASE "A"
