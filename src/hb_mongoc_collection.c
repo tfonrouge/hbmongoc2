@@ -39,6 +39,37 @@ HB_FUNC( MONGOC_COLLECTION_AGGREGATE )
     }
 }
 
+HB_FUNC(MONGOC_COLLECTION_COUNT_DOCUMENTS) {
+
+    mongoc_collection_t * collection = mongoc_hbparam( 1, _hbmongoc_collection_t_ );
+    bson_t * filter = bson_hbparam( 2, HB_IT_ANY );
+
+    if ( collection && filter ) {
+        bson_t * opts = bson_hbparam( 3, HB_IT_ANY );
+        const mongoc_read_prefs_t *read_prefs = mongoc_hbparam( 4, _hbmongoc_read_prefs_t_ );
+        bson_t reply;
+        bson_error_t error;
+
+        int64_t count = mongoc_collection_count_documents(collection, filter, opts, read_prefs, &reply, &error);
+
+        if ( opts && ! HB_ISPOINTER( 3 ) ) {
+            bson_destroy( opts );
+        }
+        hbmongoc_return_byref_bson( 5, bson_copy( &reply ) );
+        bson_destroy(&reply);
+        bson_hbstor_byref_error( 6, &error, false );
+
+        hb_retnl(count);
+
+    } else {
+        HBMONGOC_ERR_ARGS();
+    }
+
+    if ( filter && ! HB_ISPOINTER( 2 ) ) {
+        bson_destroy( filter );
+    }
+}
+
 HB_FUNC( MONGOC_COLLECTION_CREATE_BULK_OPERATION_WITH_OPTS )
 {
     mongoc_collection_t * collection = mongoc_hbparam( 1, _hbmongoc_collection_t_ );
