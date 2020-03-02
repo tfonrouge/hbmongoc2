@@ -7,6 +7,7 @@
 //
 
 #include "hb_mongoc_client.h"
+#include "hb_mongoc_uri.h"
 #include "hb_mongoc.h"
 
 HB_FUNC( MONGOC_CLIENT_COMMAND_SIMPLE )
@@ -78,6 +79,22 @@ HB_FUNC( MONGOC_CLIENT_GET_DATABASE )
         if ( database ) {
             PHB_MONGOC phDatabase = hbmongoc_new_dataContainer( _hbmongoc_database_t_, database );
             hb_retptrGC( phDatabase );
+        } else {
+            hb_ret();
+        }
+    } else {
+        HBMONGOC_ERR_ARGS();
+    }
+}
+
+HB_FUNC(MONGOC_CLIENT_GET_URI) {
+    mongoc_client_t * client = mongoc_hbparam(1, _hbmongoc_client_t_);
+    
+    if (client) {
+        const mongoc_uri_t * uri = mongoc_client_get_uri(client);
+        if ( uri ) {
+            PHB_MONGOC phURI = hbmongoc_new_dataContainer(_hbmongoc_uri_t_, mongoc_uri_copy(uri));
+            hb_retptrGC(phURI);
         } else {
             hb_ret();
         }

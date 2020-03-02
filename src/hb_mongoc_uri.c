@@ -25,3 +25,13 @@ HB_FUNC( MONGOC_URI_NEW )
         HBMONGOC_ERR_ARGS();
     }
 }
+
+HB_FUNC(MONGOC_URI_GET_STRING) {
+    const mongoc_uri_t * uri = mongoc_hbparam( 1, _hbmongoc_uri_t_ );
+
+    if (uri) {
+        hb_retc(mongoc_uri_get_string(uri));
+    } else {
+        HBMONGOC_ERR_ARGS();
+    }
+}
