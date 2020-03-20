@@ -179,7 +179,7 @@ HB_FUNC( BSON_OID_TO_STRING )
         }
         hb_retc( str );
     } else {
-        HBBSON_ERR_ARGS();
+        hb_retc("");
     }
 }
 
