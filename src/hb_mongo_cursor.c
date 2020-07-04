@@ -9,6 +9,14 @@
 #include "hb_mongo_cursor.h"
 #include "hb_mongoc.h"
 
+HB_FUNC(MONGOC_CURSOR_DESTROY) {
+    mongoc_cursor_t * cursor = mongoc_hbparam(1, _hbmongoc_cursor_t_);
+    
+    if (cursor) {
+        mongoc_cursor_destroy(cursor);
+    }
+}
+
 HB_FUNC( MONGOC_CURSOR_ERROR )
 {
     mongoc_cursor_t * cursor = mongoc_hbparam( 1, _hbmongoc_cursor_t_ );
