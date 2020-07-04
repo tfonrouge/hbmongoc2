@@ -10,10 +10,12 @@
 #include "hb_mongoc.h"
 
 HB_FUNC(MONGOC_CURSOR_DESTROY) {
-    mongoc_cursor_t * cursor = mongoc_hbparam(1, _hbmongoc_cursor_t_);
     
-    if (cursor) {
-        mongoc_cursor_destroy(cursor);
+    PHB_MONGOC phMongoc = hbmongoc_param(1, _hbmongoc_cursor_t_);
+    
+    if (phMongoc->p) {
+        mongoc_cursor_destroy(phMongoc->p);
+        phMongoc->p = NULL;
     }
 }
 
