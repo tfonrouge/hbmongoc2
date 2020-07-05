@@ -18,6 +18,8 @@ static const char * _STR_BSON_ = "BSON";
 static const char * _STR_JSON_ = "JSON";
 static const char * _STR_HASH_ = "HASH";
 
+static bool s_cancel_gc_cursor = false;
+
 static HB_GARBAGE_FUNC( hbmongoc_funcs_destroy )
 {
     PHB_MONGOC phMongoc = Cargo;
@@ -37,7 +39,9 @@ static HB_GARBAGE_FUNC( hbmongoc_funcs_destroy )
                 mongoc_uri_destroy( ( mongoc_uri_t * ) phMongoc->p );
                 break;
             case _hbmongoc_cursor_t_:
-//                mongoc_cursor_destroy( ( mongoc_cursor_t * ) phMongoc->p );
+                if (!s_cancel_gc_cursor) {
+                    mongoc_cursor_destroy( ( mongoc_cursor_t * ) phMongoc->p );
+                }
                 break;
             case _hbmongoc_write_concern_t_:
                 mongoc_write_concern_destroy( ( mongoc_write_concern_t * ) phMongoc->p );
@@ -136,6 +140,20 @@ void * mongoc_hbparam( int iParam, hbmongoc_t_ type )
 
 
 /* Harbour API */
+
+HB_FUNC(HB_MONGOC_CANCEL_GC_CURSOR) {
+    PHB_ITEM pItem = hb_param(1, HB_IT_LOGICAL);
+    
+    if (pItem) {
+        s_cancel_gc_cursor = hb_parl(1);
+    }
+    
+    if (pItem || hb_pcount() == 0) {
+        hb_retl(s_cancel_gc_cursor);
+    } else {
+        HBMONGOC_ERR_ARGS();
+    }
+}
 
 HB_FUNC( HB_NUMTYPE )
 {
