@@ -59,7 +59,6 @@ HB_FUNC( MONGOC_BULK_OPERATION_INSERT )
 }
 
 HB_FUNC( MONGOC_BULK_OPERATION_INSERT_WITH_OPTS )
-#if MONGOC_CHECK_VERSION( 1, 7, 0 )
 {
     mongoc_bulk_operation_t * bulk = mongoc_hbparam( 1, _hbmongoc_bulk_operation_t_ );
     bson_t * document = bson_hbparam( 2, HB_IT_ANY );
@@ -86,8 +85,34 @@ HB_FUNC( MONGOC_BULK_OPERATION_INSERT_WITH_OPTS )
         bson_destroy( document );
     }
 }
-#else
-{
-    HBMONGOC_ERR_NOFUNC();
+
+HB_FUNC(MONGOC_BULK_OPERATION_UPDATE_ONE_WITH_OPTS) {
+    mongoc_bulk_operation_t * bulk = mongoc_hbparam( 1, _hbmongoc_bulk_operation_t_ );
+    bson_t * selector = bson_hbparam( 2, HB_IT_ANY );
+    bson_t * document = bson_hbparam( 3, HB_IT_ANY );
+
+    if (bulk && selector && document) {
+        bson_t * opts = bson_hbparam(4, HB_IT_ANY);
+        bson_error_t error;
+        
+        HB_BOOL result = mongoc_bulk_operation_update_one_with_opts(bulk, selector, document, opts, &error);
+
+        bson_hbstor_byref_error( 5, &error, result );
+
+        hb_retl( result );
+
+        if ( opts && ! HB_ISPOINTER( 4 ) ) {
+            bson_destroy( opts );
+        }
+
+    } else {
+        HBMONGOC_ERR_ARGS();
+    }
+
+    if (selector && ! HB_ISPOINTER(2)) {
+        bson_destroy(selector);
+    }
+    if (document && ! HB_ISPOINTER(3)) {
+        bson_destroy(document);
+    }
 }
-#endif
