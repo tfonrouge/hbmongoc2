@@ -8,10 +8,13 @@
 
 #include "../hbmongoc.ch"
 
-FUNCTION hb_bson_append( bson, key, value )
+FUNCTION hb_bson_append( bson, key, value, result )
     LOCAL itm
     LOCAL begin
-    LOCAL result
+
+    IF bson == NIL
+        bson := bson_new()
+    ENDIF
 
     SWITCH valType( key )
     CASE "A"
@@ -88,7 +91,7 @@ FUNCTION hb_bson_append( bson, key, value )
         ENDSWITCH
     ENDSWITCH
 
-RETURN result
+RETURN bson
 
 FUNCTION hb_bson_new(key, value)
     LOCAL bson := bson_new()
