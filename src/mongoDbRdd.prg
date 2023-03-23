@@ -875,7 +875,11 @@ STATIC FUNCTION buildMatchExpr(xSeek, indexInfo, lSoft, match)
             IF lSoft == .T.
                 match[itm[1]] := {"$gte" => left(xSeek, fieldLen):rTrim()}
             ELSE
-                match[itm[1]] := left(xSeek, fieldLen):rTrim()
+                IF len(xSeek) < fieldLen
+                    match[itm[1]] := {"$regex" => "^" + left(xSeek, fieldLen):rTrim()}
+                ELSE
+                    match[itm[1]] := left(xSeek, fieldLen):rTrim()
+                ENDIF
             ENDIF
             IF availBufferLen > 0
                 xSeek := subStr(xSeek, fieldLen + 1)
@@ -1169,3 +1173,6 @@ STATIC FUNCTION findCurrentIndexPos(aWAData)
     ENDDO
 
 RETURN skipped
+
+FUNCTION isMongoDb()
+RETURN rddName() == "MONGODBRDD"
