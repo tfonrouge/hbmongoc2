@@ -13,7 +13,7 @@ HB_FUNC(MONGOC_CURSOR_DESTROY) {
     
     PHB_MONGOC phMongoc = hbmongoc_param(1, _hbmongoc_cursor_t_);
     
-    if (phMongoc->p) {
+    if (phMongoc && phMongoc->p) {
         mongoc_cursor_destroy(phMongoc->p);
         phMongoc->p = NULL;
     }
