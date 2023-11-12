@@ -8,6 +8,9 @@
 
 #include "../hbmongoc.ch"
 
+FUNCTION hb_array_to_bson(array)
+RETURN hb_bson_append(NIL, array)
+
 FUNCTION hb_bson_append( bson, key, value, result )
     LOCAL itm
     LOCAL begin
